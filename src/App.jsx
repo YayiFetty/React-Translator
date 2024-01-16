@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-const vowel = [ "a","e", "i","o","u" ]
+const vowel =  [ "a","e", "i","o","u" ]
+
 
 function App() {
     const prefixWord = "way"
@@ -14,7 +15,6 @@ function App() {
       //check for the vowel
       const isVowel = (char) => vowel.includes(char.toLowerCase())
        
-      
       //function to translate each word to PigLatin
       function translateWordToPigLatin(word){
 
@@ -22,15 +22,18 @@ function App() {
           return word + prefixWord
         }
 
-        else{
+        else {
           let firstConsonant = [];
           let i = 0;
-          while(i < word.length && !isVowel(word[i])){
+        
+          while(i < word.length && !isVowel(word[i])) {
             firstConsonant.push(word[i])
             i++
           }
+
           return word.slice(i) + firstConsonant.join("") + "ay"
         }
+
       }
 
       const translatedText = text
